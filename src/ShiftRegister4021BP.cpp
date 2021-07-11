@@ -50,7 +50,9 @@ uint8_t ShiftRegister4021BP::getAll() {
 }
 
 //reads pins and returns value of specified pin
-uint8_t ShiftRegister4021BP::get(int pin) {
-    getAll();	
+uint8_t ShiftRegister4021BP::get(int pin, bool getAllData = true) {
+	if (getAllData) {
+        getAll();	
+	}
     return (_registerValues[pin / 8] >> (pin % 8)) & 1;
 }

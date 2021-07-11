@@ -14,7 +14,7 @@
   public:
     ShiftRegister4021BP(int numberOfRegisters, int dataPin, int clockPin, int latchPin);
     uint8_t getAll();
-    uint8_t get(int pin);
+    uint8_t get(int pin, bool getAllData = true);
 
   private:
     int _numberOfRegisters;
